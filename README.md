@@ -26,3 +26,54 @@ This Java project is a Web API for managing a ToDo list. It is built with Spring
    spring.datasource.url=jdbc:mysql://localhost:{YOUR_HOST}/{DB_NAME}
    spring.datasource.username={YOUR_USER}
    spring.datasource.password={YOUR_PASSWORD}
+
+## API
+```
+GET /users?id={ID}
+{
+    "id": ID,
+    "username": "username",
+    "todos": [
+        {
+            "id": id,
+            "title": "TITLE1",
+            "completed": false,
+            "userId": ID
+        },
+        {
+            "id": id,
+            "title": "TITLE2",
+            "completed": true,
+            "userId": ID
+        },
+        {
+            "id": id,
+            "title": "TITLE3",
+            "completed": true,
+            "userId": ID
+        },
+    ]
+}
+
+POST /users
+{
+   "username": "username",
+   "password": "pass",
+}
+
+PUT /todos?id={ID}
+{
+    "id": ID,
+    "title": "TODO",
+    "completed": true || false,
+    "userId": userId
+}
+
+```
+
+## Installation
+
+1. Clone the repository:
+   
+   ```sh
+   git clone https://github.com/Kotyarya/Java_WebAPI_Todo
